@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang = uk>
+    <head>
+        <meta chaesr="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Slider</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="slider" id="slider">
+            <div class="slides">
+                <img src="https://picsum.photos/id/1015/600/350" class="slide" alt="">
+                <img src="https://picsum.photos/id/1016/600/350" class="slide" alt="">
+                <img src="https://picsum.photos/id/1017/600/350" class="slide" alt="">
+            </div>
+       
+
+            <button class="btn prev">Previous</button>
+            <button class="btn next">Next</button>
+        </div>
+        <script src="slider.js"></script>
+        <script>
+            const slider = new Slider('main-slider');
+        </script>
+        </body>
+</html>
