@@ -1,74 +1,75 @@
-# Slider Project
+# Тестове завдання: Сторінка з слайдером
 
 ## Опис
 
-Сторінка із слайдером. Зображення підвантажуються з JSON API (`https://picsum.photos/v2/list`) за допомогою PHP, формуються HTML-слайди через клас Slider та відображаються через клас Renderer. JS забезпечує гортання слайдів.
+Проєкт створює веб-сторінку із слайдером зображень, які отримуються з JSON-джерела через PHP (API: `https://picsum.photos/v2/list`).  
+Парсинг JSON виконується у класі `Slider`, формування зображень — у класі `Renderer`.  
+Слайдер реалізовано на чистому CSS і JavaScript.
 
 ## Структура проєкту
 
-```
-/index.php
-/app/Image/Renderer.php
-/app/Image/Slider.php
-/assets/style.css
-/assets/slider.js
-/composer.json
-/README.md
-```
+/index.php ← точка входу, відображення HTML
+/app/Image/Renderer.php ← клас для виводу тегу <img>
+/app/Image/Slider.php ← клас для парсингу JSON і генерації слайдера
+/assets/style.css ← стилі слайдера
+/assets/slider.js ← логіка перемикання слайдів
+/composer.json ← конфігурація Composer (PSR-4 автозавантаження)
+/README.md ← інструкція по запуску
 
-## Встановлення
+bash
+Копіювати код
+
+## Встановлення та запуск
 
 1. Клонувати репозиторій:
+   ```bash
+   git clone https://github.com/<твоє_ім’я_користувача>/<назва_репозиторію>.git
+Перейти в папку проєкту:
 
-```
-git clone https://github.com/<ТВОЄ_ІМ'Я>/<slider-project>.git
-```
+bash
+Копіювати код
+cd <назва_репозиторію>
+Встановити залежності Composer:
 
-2. Перейти у папку проєкту:
-
-```
-cd slider-project
-```
-
-3. Встановити залежності через Composer:
-
-```
+bash
+Копіювати код
 composer install
-```
+Запустити локальний PHP-сервер (наприклад, через вбудований сервер PHP):
 
-4. Запустити локальний сервер PHP або через XAMPP:
-
-```
+bash
+Копіювати код
 php -S localhost:8000
-```
+Відкрити у браузері:
 
-5. Відкрити у браузері:
-
-```
+bash
+Копіювати код
 http://localhost:8000/index.php
-```
+Використання
+PHP отримує JSON з API і парсить його.
 
-## Використання
+Клас Renderer виводить зображення через HTML-теги.
 
-* Слайдер підвантажує зображення з JSON.
-* Кожне зображення виводиться через Renderer.
-* JS забезпечує перемикання слайдів.
+Клас Slider генерує структуру слайдера.
 
-## Додатково
+JavaScript у slider.js забезпечує перемикання між зображеннями.
 
-* Логування помилок при недоступності JSON можна робити через error_log.
-* CSS і JS винесені у окремі файли.
-* Код організований відповідно до PSR-12 та SRP.
+CSS у style.css відповідає за зовнішній вигляд.
 
-## Репозиторій
+Додатково
+При помилках отримання JSON у лог записується повідомлення через error_log().
 
-* Завантаження на GitHub:
+Код відповідає стандартам PSR-12 та принципу SRP.
 
-```
+HTML, CSS і JS винесені у окремі файли.
+
+Проєкт використовує Composer для автозавантаження (PSR-4).
+
+Завантаження на GitHub
+bash
+Копіювати код
 git init
 git add .
 git commit -m "Initial commit"
 git branch -M main
-git remote add origin https://github.com/<ТВОЄ_ІМ'Я>/<slider-project>.git
+git remote add origin https://github.com/<твоє_ім’я_користувача>/<назва_репозиторію>.git
 git push -u origin main
-```
